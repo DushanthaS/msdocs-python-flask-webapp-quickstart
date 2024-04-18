@@ -1,4 +1,5 @@
 import os
+import time
 
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
@@ -21,8 +22,8 @@ def hello():
    name = request.form.get('name')
 
    if name:
-       print('Request for hello page received with name=%s' % name)
        time.sleep(300)  # Sleep for 5 minutes
+       print('Request for hello page received with name=%s' % name)
        return render_template('hello.html', name = name)
    else:
        print('Request for hello page received with no name or blank name -- redirecting')
