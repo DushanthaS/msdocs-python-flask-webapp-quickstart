@@ -1,4 +1,5 @@
 import os
+import time
 
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
@@ -9,6 +10,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
    print('Request for index page received')
+   time.sleep(300)  # Sleep for 5 minutes
    return render_template('index.html')
 
 @app.route('/favicon.ico')
@@ -22,6 +24,7 @@ def hello():
 
    if name:
        print('Request for hello page received with name=%s' % name)
+       time.sleep(300)  # Sleep for 5 minutes
        return render_template('hello.html', name = name)
    else:
        print('Request for hello page received with no name or blank name -- redirecting')
