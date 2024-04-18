@@ -1,5 +1,4 @@
 import os
-import time
 
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
@@ -10,7 +9,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
    print('Request for index page received')
-   time.sleep(300)  # Sleep for 5 minutes
    return render_template('index.html')
 
 @app.route('/favicon.ico')
